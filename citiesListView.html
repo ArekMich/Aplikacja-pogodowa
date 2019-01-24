@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cities List</title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/citiesList.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="transbox">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">APIweather</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" onClick="window.open('daysContent.html', '_blank')">Weather</a></li>
+                <li><a href="citiesListView.html">Cities</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search City...." id="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit" onclick="searchCity()">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Local Storage" id="locStorage">
+
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> EXIT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="w3-container">
+        <h2>List of Cities</h2>
+
+        <table class="w3-table-all" id="tableM" style="width:60%;margin:auto">
+            <thead>
+            <tr class="w3-light-grey w3-hover-red">
+                <th>City</th>
+            </tr>
+            </thead>
+            <tbody id="tableCities">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="js/citiesList.js"></script>
+</body>
+</html>

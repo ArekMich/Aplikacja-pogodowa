@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather Now</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="js/pagination/pagination.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="transbox">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">APIweather</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" onClick="window.open('daysContent.html', '_blank')">Weather</a></li>
+                <li><a href="citiesListView.html">Cities</a></li>
+                <li><a href="#" id="informa">Contact</a></li>
+            </ul>
+            <div class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Local Storage" id="locStorage">
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> EXIT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" id="changeText">
+        <h1 id="checkPage" style="font-family: 'Rage Italic';">Please wait, the page is loading ... </h1>
+
+        <div id="showProgress">
+            <div class="progress">
+                <div id="progresBar" class="progress-bar progress-bar-striped active" role="progressbar"
+                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                    0%
+                </div>
+            </div>
+        </div>
+        <br/>
+
+        <div id="showElemList" style="display: none">
+            <form>
+                <div class="form-group">
+                    <label for="sel1">Select list (select one):</label>
+                    <select class="form-control" id="sel1">
+                        <option value="0">Select Element</option>
+                        <option value="2">2</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="valP" style="display: block">Input value of elements on list:</label>
+                    <input type="number" class="form-control" id="valP" value="5" style="display:inline;width:70%">
+                    <button type="button" class="btn btn-primary" onclick="changeP()" style="display:inline;width:25%">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <br/>
+
+        <div id="filter" style="display:none">
+            <h3>Filter cities by everything...</h3>
+            <input class="form-control" id="myInput" type="text" placeholder="Search.."/>
+
+            <button type="button" class="btn btn-primary" style="margin:20px; width:35%;" onclick="sortCities()">Sort
+                Cities
+            </button>
+            <button type="button" class="btn btn-primary" style="margin:20px; width:35%;" onclick="sortTemp()">Sort
+                Temperature
+            </button>
+        </div>
+
+        <div id="results" style="display: none">
+            <table id="tempTable" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Lat</th>
+                    <th>Lon</th>
+                    <th>Temperature</th>
+                </tr>
+                </thead>
+                <tbody id="tempTableBody"></tbody>
+            </table>
+        </div>
+        <div id="pagine" class="pagination" style="margin-left:30%"></div>
+    </div>
+</div>
+
+
+<script src="js/pagination/paginate.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
